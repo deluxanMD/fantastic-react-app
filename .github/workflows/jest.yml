@@ -1,18 +1,25 @@
 name: Pull request into dev, main
 
 on:
-  pull_request:
-    branches:
-      - "dev"
-      - "main"
+  workflow_run:
+    workflows: ["Lint and Prettier"]
+    types:
+      - completed
 
 jobs:
-  checkout-and-setup:
-    uses: ./.github/workflows/setup-node.yml
-
   jest:
     runs-on: ubuntu-latest
-    needs: checkout-and-setup
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Node modules
+        run: npm ci
+
       - name: Jest
         run: npm run test
