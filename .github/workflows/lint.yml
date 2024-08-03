@@ -8,7 +8,7 @@ on:
 
 jobs:
   checkout-and-setup:
-    uses: deluxanMD/fantastic-react-app/.github/workflows/common/setup-node.yml@main
+    uses: deluxanMD/fantastic-react-app/.github/workflows/setup-node.yml@main
 
   lint-and-prettier:
     runs-on: ubuntu-latest
