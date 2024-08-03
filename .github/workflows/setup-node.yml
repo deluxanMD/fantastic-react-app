@@ -16,3 +16,6 @@ jobs:
 
       - name: Install Node modules
         run: npm ci
+
+      - name: List files in root
+        run: ls -la
