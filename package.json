@@ -17,16 +17,20 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "nyc react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:check": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "prettier:check": "npx prettier --check src",
+    "prettier:fix": "npx prettier --write src",
+    "play:run": "npx playwright test",
+    "play:open": "npx playwright test --ui",
+    "report": "nyc report --reporter=lcov --reporter=text"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": []
   },
   "browserslist": {
     "production": [
@@ -39,5 +43,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@playwright/test": "^1.46.0",
+    "@types/eslint__js": "^8.42.3",
+    "babel-plugin-istanbul": "^7.0.0",
+    "eslint": "^9.8.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
+    "nyc": "^17.0.0",
+    "playwright-test-coverage": "^1.2.12",
+    "prettier": "3.3.3",
+    "typescript-eslint": "^8.0.0"
   }
 }
