@@ -28,6 +28,11 @@ jobs:
         run: npm run prettier:check
 
   jest:
-    name: jest
+    name: test
     needs: lint-and-prettier
     uses: ./.github/workflows/jest.yml
+
+  playwright:
+    name: test
+    needs: lint-and-prettier
+    uses: ./.github/workflows/playwright.yml
