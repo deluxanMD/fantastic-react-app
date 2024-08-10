@@ -28,5 +28,6 @@ jobs:
         run: npm run prettier:check
 
   jest:
+    name: jest
     needs: lint-and-prettier
     uses: ./.github/workflows/jest.yml
