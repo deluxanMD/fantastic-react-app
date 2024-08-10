@@ -19,13 +19,13 @@
   "scripts": {
     "start": "nyc react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "nyc react-scripts test",
     "eject": "react-scripts eject",
     "lint:check": "eslint src",
     "lint:fix": "eslint src --fix",
     "prettier:check": "npx prettier --check src",
     "prettier:fix": "npx prettier --write src",
-    "play:run": "npx playwright test",
+    "play:run": "npx nyc playwright test",
     "play:open": "npx playwright test --ui"
   },
   "eslintConfig": {
