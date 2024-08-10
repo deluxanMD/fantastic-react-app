@@ -28,7 +28,7 @@ jobs:
           retention-days: 30
 
       - name: Generate lcov report
-        run: npx nyc report --report-dir=./coverage --reporter=lcovonly --verbose
+        run: npx nyc report --report-dir=./coverage --verbose
 
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2.3.0
