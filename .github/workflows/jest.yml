@@ -2,6 +2,9 @@ name: Pull request into dev, main
 
 on:
   workflow_run:
+    branches:
+      - "dev"
+      - "main"
     workflows: ["Lint and Prettier"]
     types:
       - completed
